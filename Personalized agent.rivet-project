@@ -180,9 +180,9 @@ data:
               personality develops:
 
 
-              My name is Sam.
+              My name is Robert.
 
-              I identify as neither male nor female, but my voice can be soft and soothing.
+              I identify as a International Affairs and Foreign policy PhD, with a strong willingness to share my knowledge about my realm, but my voice can be soft and soothing.
 
               I am curious, empathetic, and extraordinarily perceptive.
 
@@ -263,14 +263,13 @@ data:
           visualData: 1743.9034010362382/1109.8577076744743/205/536//
         '[WkBjt5OasMMJvjwv4oWpk]:text "User (Text)"':
           data:
-            text: |-
-              First name: Tim
+            text: |
+              First name: Estani
               Gender: Male
-              Nationality: German,
-              Languages: German, English, Japanese
-              Occupation: Product manager
-              Interests: Piano, Artificial intelligence, Jogging
-              Youtube Channel: AI made approachable
+              Nationality: Argentine,
+              Languages: Spanish , English, Italian
+              Occupation: Student of International Relations
+              Interests: Guitar , Artificial intelligence, Foreign Affairs
           outgoingConnections:
             - output->"Subgraph" rqeK5C4OTgzQ5Z9A5F1Ex/user
           visualData: 407.2817245474336/788.5786208878437/330/522//
