@@ -1,0 +1,225 @@
+version: 4
+data:
+  attachedData:
+    trivet:
+      testSuites: []
+      version: 1
+  graphs:
+    665fWA7o8j-_YeYez5BGX:
+      metadata:
+        description: ""
+        id: 665fWA7o8j-_YeYez5BGX
+        name: PerfilAutor
+      nodes:
+        '[57SI2JZQHkesvhXgFhKRK]:text "Persona"':
+          data:
+            text: Eres un experto doctor en filosofia politica y en ingenieria de prompt.
+          outgoingConnections:
+            - output->"Chat" JmJ_EN0keyMUAadkq7dk5/systemPrompt
+          visualData: 203.21234190696126/203.2144429181949/330/118/var(--node-color-4)/var(--node-color-4)
+        '[Azo3hpAUjhJV6MS-_YIH3]:text "Salida"':
+          data:
+            text: "{{input}}"
+          outgoingConnections:
+            - output->"Graph Output" yYblyfheUy3hMwDcyz_uy/value
+          visualData: -57.92591119316388/730.4831899368196/330/119/var(--node-color-7)/var(--node-color-7)
+        '[JmJ_EN0keyMUAadkq7dk5]:chat "Chat"':
+          data:
+            additionalParameters: []
+            cache: false
+            enableFunctionUse: false
+            maxTokens: 1024
+            model: gpt-4o
+            parallelFunctionCalling: true
+            stop: ""
+            temperature: 0.5
+            top_p: 1
+            useAdditionalParametersInput: false
+            useAsGraphPartialOutput: true
+            useFrequencyPenaltyInput: false
+            useMaxTokensInput: false
+            useModelInput: false
+            usePresencePenaltyInput: false
+            useStop: false
+            useStopInput: false
+            useTemperatureInput: false
+            useTopP: false
+            useTopPInput: false
+            useUseTopPInput: false
+            useUserInput: false
+          outgoingConnections:
+            - response->"Salida" Azo3hpAUjhJV6MS-_YIH3/input
+          visualData: 782.2001930697347/205.82728974039276/230/85//
+        '[VYfmrt4V87XEd0-eGLjq_]:text "Instruccion"':
+          data:
+            text: Genera un resumen de lo que sabes acerca del siguiente {{autor}} y
+              describilo como "persona", de modo que esta descripcion se pueda
+              utilizar como un system en un prompt.
+          outgoingConnections:
+            - output->"Chat" JmJ_EN0keyMUAadkq7dk5/prompt
+          visualData: -225.00881916327853/460.51582218833244/330/125/var(--node-color-6)/var(--node-color-6)
+        '[jTzWAesTzAdyL8xEdMYNx]:graphInput "Graph Input"':
+          data:
+            dataType: string
+            id: autor
+            useDefaultValueInput: false
+          outgoingConnections:
+            - data->"Instruccion" VYfmrt4V87XEd0-eGLjq_/autor
+          visualData: -319.01337024065754/237.27755540440103/330/127/var(--node-color-2)/var(--node-color-2)
+        '[yYblyfheUy3hMwDcyz_uy]:graphOutput "Graph Output"':
+          data:
+            dataType: string
+            id: output
+          visualData: 522.3354098653667/741.1067300271735/330/123/var(--node-color-5)/var(--node-color-5)
+    aG0YrU0Fz6_7Jwgjt32gZ:
+      metadata:
+        description: ""
+        id: aG0YrU0Fz6_7Jwgjt32gZ
+        name: Analisis de tema
+      nodes:
+        '[9Ni5o1wCFKITOGRduBif_]:subGraph "Segundo Autor"':
+          data:
+            graphId: 665fWA7o8j-_YeYez5BGX
+            useAsGraphPartialOutput: false
+            useErrorOutput: false
+          outgoingConnections:
+            - output->"Segundo paso ensayo" c2IWxk0xW9eKFSNieZYYS/systemPrompt
+          visualData: 105.02197948523798/953.5280232503042/330/58/var(--node-color-1)/var(--node-color-1)
+        '[C9jN1sfG_MTFQeZLqBy9l]:userInput "Autor2"':
+          data:
+            prompt: Cual es el autor2?
+            useInput: false
+          outgoingConnections:
+            - output->"InstruccionEnsayo2" Q3L2bKX1yKN54p4oyAwF6/autor2
+            - output->"Segundo Autor" 9Ni5o1wCFKITOGRduBif_/autor
+          visualData: -405.90680076665217/883.3293729033426/280/64/var(--node-color-4)/var(--node-color-4)
+        '[DO5gLsQT07AgzNlxQZ7ze]:text "Ensayo1"':
+          data:
+            text: "{{input}}"
+          outgoingConnections:
+            - output->"InstruccionEnsayo2" Q3L2bKX1yKN54p4oyAwF6/ensayo
+          visualData: 1452.4729207984117/225.43837937282638/330/77/var(--node-color-7)/var(--node-color-7)
+        '[DahM_j02g_yrRdK0v8GMB]:subGraph "PrimerAutor"':
+          data:
+            graphId: 665fWA7o8j-_YeYez5BGX
+            useAsGraphPartialOutput: false
+            useErrorOutput: false
+          outgoingConnections:
+            - output->"Pimer paso ensayo" FaTuOSi3nV8bmPVBCIyNZ/systemPrompt
+          visualData: 115.95551989810482/236.34526376039216/330/60/var(--node-color-1)/var(--node-color-1)
+        '[FaTuOSi3nV8bmPVBCIyNZ]:chat "Pimer paso ensayo"':
+          data:
+            additionalParameters: []
+            cache: false
+            enableFunctionUse: false
+            maxTokens: 4000
+            model: gpt-4o
+            overrideMaxTokens: 8000
+            parallelFunctionCalling: true
+            stop: ""
+            temperature: 0.5
+            top_p: 1
+            useAdditionalParametersInput: false
+            useAsGraphPartialOutput: true
+            useFrequencyPenaltyInput: false
+            useMaxTokensInput: false
+            useModelInput: false
+            usePresencePenaltyInput: false
+            useStop: false
+            useStopInput: false
+            useTemperatureInput: false
+            useTopP: false
+            useTopPInput: false
+            useUseTopPInput: false
+            useUserInput: false
+          outgoingConnections:
+            - response->"Ensayo1" DO5gLsQT07AgzNlxQZ7ze/input
+          visualData: 984.0003689535184/90.64690970527165/230/51/var(--node-color-2)/var(--node-color-2)
+        '[MJTpJKSkBgkgPHs1Xb5DX]:text "Ensayo2"':
+          data:
+            text: "{{input}}"
+          visualData: 1463.4976776058163/748.6482058301524/330/72/var(--node-color-7)/var(--node-color-7)
+        '[Q3L2bKX1yKN54p4oyAwF6]:text "InstruccionEnsayo2"':
+          data:
+            text: >-
+              Describe tu persona en base es esta descricpion: {{autor2}}
+
+              Describe la persona que escribio el ensayo original en base a su descripcion{autor1}
+
+              Analiza el ensayo {{ensayo}}.
+
+              Segun tu forma de analisis y pensamiento, y tus conceptos claves, describe 10 pasos que deberias tener en cuenta para escribir un nuevo ensayo, sobre el mismo tema: {{tema}} el ensayo. Ten en cuenta similitudes y diferencias que tienes respecto al autor del ensayo original {{autor1}}
+
+
+              Escribe 2 ejemplos sobre 2 temas de interes diferentes al tema de analsis donde sigas el procedimiento y los pasos que definiste para escribir un ensayo.
+
+              Analiza el tema : {{tema}}.
+
+              Finalmente y teniendo en cuenta los pasos que definiste y los dos ejemplos que hiciste, scribe un ensayo sobre el tema principal {{tema}}.
+          outgoingConnections:
+            - output->"Segundo paso ensayo" c2IWxk0xW9eKFSNieZYYS/prompt
+          visualData: 542.8254814851157/718.1295157790242/330/75//
+        '[UvuYH0tOkH7gECXtr-ZXc]:text "InstruccionPaso1"':
+          data:
+            text: >-
+              Describe tu persona en base a esta descripcion: {{autor1}}
+
+
+              Analiza el tema : {{tema}}.
+
+              Segun tu forma de analisis y pensamiento, y tus conceptos claves, describe 10 pasos que deberias tener en cuenta para escribir un esayo sobre este tema.
+
+              Escribe 2 ejemplos sobre 2 temas de interes diferentes al tema de analsis donde sigas el procedimiento y los pasos que definiste para escribir un ensayo.
+
+              Finalmente y teniendo en cuenta los pasos que definiste y los dos ejemplos que hiciste, scribe un ensayo sobre el tema principal {{tema}}.
+          outgoingConnections:
+            - output->"Pimer paso ensayo" FaTuOSi3nV8bmPVBCIyNZ/prompt
+          visualData: 534.1357049276146/323.5497204013108/330/69//
+        '[c2IWxk0xW9eKFSNieZYYS]:chat "Segundo paso ensayo"':
+          data:
+            additionalParameters: []
+            cache: false
+            enableFunctionUse: false
+            maxTokens: 4000
+            model: gpt-4o
+            overrideMaxTokens: 8000
+            parallelFunctionCalling: true
+            stop: ""
+            temperature: 0.5
+            top_p: 1
+            useAdditionalParametersInput: false
+            useAsGraphPartialOutput: true
+            useFrequencyPenaltyInput: false
+            useMaxTokensInput: false
+            useModelInput: false
+            usePresencePenaltyInput: false
+            useStop: false
+            useStopInput: false
+            useTemperatureInput: false
+            useTopP: false
+            useTopPInput: false
+            useUseTopPInput: false
+            useUserInput: false
+          outgoingConnections:
+            - response->"Ensayo2" MJTpJKSkBgkgPHs1Xb5DX/input
+          visualData: 995.9155541948004/795.4006491250378/230/73/var(--node-color-2)/var(--node-color-2)
+        '[cxQbChQ3aZKQFDvJj0rEN]:userInput "Tema"':
+          data:
+            prompt: Cual es el tema?
+            useInput: false
+          outgoingConnections:
+            - output->"InstruccionPaso1" UvuYH0tOkH7gECXtr-ZXc/tema
+          visualData: -308.16956851409947/552.0987136876663/280/59/var(--node-color-4)/var(--node-color-4)
+        '[m8ZC_BLSejukyReadjpoP]:userInput "Autor1"':
+          data:
+            prompt: Cual es el autor1?
+            useInput: false
+          outgoingConnections:
+            - output->"InstruccionPaso1" UvuYH0tOkH7gECXtr-ZXc/autor1
+            - output->"PrimerAutor" DahM_j02g_yrRdK0v8GMB/autor
+          visualData: -260.20322167909234/220.29623211163764/280/62/var(--node-color-4)/var(--node-color-4)
+  metadata:
+    description: Asistente para papers
+    id: zFIycKaVemY3RrF6FHggK
+    title: AsistentePaper
+  plugins: []
